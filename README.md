@@ -9,17 +9,7 @@ Built incrementally, one tested step at a time, following the principle that
 **the LLM decides what to do, but Python always does the actual math.**
 
 ---
-## Gallery
 
-![AI Data Analyst Agent interface](docs/1.png)
-![Automatic insights on upload](docs/2.png)
-![Multi-chat sidebar with dataset profile](docs/3.png)
-![Downloadable PDF report](docs/4.png)
-![Dataset profile card](docs/5.png)
-![Chart example](docs/6.png)
-![Q&A exchange](docs/7.png)
-
----
 ## How it works
 
 ```
@@ -146,40 +136,15 @@ The app opens automatically at `http://localhost:8501`.
 The interface is a dark, analytics-tool-styled chat app (slate background, teal
 accent), split into a sidebar and a main chat column:
 
-```
-+---------------------------------------------------------------+
-| SIDEBAR              |  MAIN CHAT AREA                        |
-|-----------------------|-----------------------------------------|
-| AI Data Analyst       |          What's in your data?          |
-| [+ New chat]          |                                         |
-|                        |  [assistant] Dataset loaded:           |
-| CHATS                 |    big_sales.csv (50 rows, 5 cols)      |
-| > sales_2026    [x]   |                                         |
-|   test_sales    [x]   |  [assistant] So this looks like daily   |
-|                        |    retail sales... I noticed Cairo      |
-| DATASET                |    dominates the region breakdown...    |
-| +----------------+    |                                         |
-| | big_sales.csv  |    |                       [user] show me a  |
-| | 50 rows, 5 cols|    |                       chart of revenue  |
-| | 0 duplicates   |    |                       by product   [you]|
-| | date, product, |    |                                         |
-| | region, qty,   |    |  [assistant] Here's a bar chart showing |
-| | revenue        |    |    Total Revenue by Product:            |
-| +----------------+    |    [ chart image ]                      |
-|                        |                                         |
-| [Clear chat] [New set] |                                         |
-|                        |  +-----------------------------------+ |
-| REPORT                 |  | Ask a question about your data... | |
-| (PDF) (Word)           |  +-----------------------------------+ |
-| [Generate report]      |                                         |
-+---------------------------------------------------------------+
-```
-
-**To add a real screenshot:** save one as `docs/screenshot.png` in the project
-folder, then add this line right above this section:
 
 ```markdown
-![App screenshot](docs/screenshot.png)
+![AI Data Analyst Agent interface](docs/1.png)
+![Automatic insights on upload](docs/2.png)
+![Multi-chat sidebar with dataset profile](docs/3.png)
+![Downloadable PDF report](docs/4.png)
+![Dataset profile card](docs/5.png)
+![Chart example](docs/6.png)
+![Q&A exchange](docs/7.png)
 ```
 
 ---
@@ -197,19 +162,22 @@ folder, then add this line right above this section:
 
 ## Known limitations / next steps
 
-- Chats and uploaded data live only in memory for the current browser session —
-  refreshing the page clears everything (no disk persistence yet)
-- Chart selection can still be imperfect on very ambiguous requests
+- **Report generation is still being refined** — PDF and Word exports are functional, but the report system is still being improved for better formatting, charts, and different dataset/session sizes
+- **Chart generation is still being refined** — chart selection and generation can still be imperfect for some ambiguous or complex requests
+- Chats and uploaded data live only in memory for the current browser session — refreshing the page clears everything (no disk persistence yet)
 - No correlation or outlier detection yet
-- Tested on datasets up to a few hundred rows; large-file behavior (10k+ rows)
-  not yet verified
+- Tested on datasets up to a few hundred rows; large-file behavior (10k+ rows) not yet verified
 
 ---
 
 ## Project philosophy
 
-This was built step by step, testing each piece before moving to the next,
-rather than generating the whole system at once. Every major component maps
-directly back to the original architecture diagram at the top of this file —
-Loader, Profiler, Planner, Tools, Explainer, and Report Generator each exist as
-their own tested, understandable piece.
+The project follows a simple principle:
+
+**The LLM decides what to do. Python does the actual work.**
+
+The system is designed to keep reasoning and computation separate. The LLM is responsible for understanding the user's request, selecting the appropriate tool, and explaining the result. Pandas and Python handle the actual calculations, data processing, and chart generation.
+
+The project is also built incrementally, with each major component developed and tested independently before being integrated into the full pipeline.
+
+The goal is to keep the system simple, transparent, and easy to understand without relying on heavy orchestration frameworks or unnecessary infrastructure.
