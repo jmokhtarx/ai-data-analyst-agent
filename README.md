@@ -163,6 +163,7 @@ text
 | (PDF) (Word)           |  +-----------------------------------+ |
 | [Generate report]      |                                         |
 +---------------------------------------------------------------+
+```
 Example questions to try
 "What does this data represent?"
 
@@ -216,8 +217,6 @@ Correlation matrix and outlier detection tools
 Support for grouped/multi-series line charts
 
 CSV export of a tool's raw output alongside the natural-language answer
-
-"Explain this number" hover — click any figure in an answer to see the exact pandas call that produced it
 
 Streaming responses from Groq for a snappier chat feel
 
