@@ -91,7 +91,7 @@ MVP, per the original project constraints.
 AI_Data_Analyst/
 |-- app.py                     # Streamlit UI + orchestration
 |-- data/
-|   `-- sales.csv              # sample dataset
+|   
 |-- tools/
 |   |-- dataset_loader.py      # load_dataset, profile_dataset, detect_column_type
 |   |-- analysis_tools.py      # analyze_dataset (descriptive stats)
@@ -137,7 +137,7 @@ The interface is a dark, analytics-tool-styled chat app (slate background, teal
 accent), split into a sidebar and a main chat column:
 
 
-```markdown
+
 ![AI Data Analyst Agent interface](docs/1.png)
 ![Automatic insights on upload](docs/2.png)
 ![Multi-chat sidebar with dataset profile](docs/3.png)
@@ -145,7 +145,7 @@ accent), split into a sidebar and a main chat column:
 ![Dataset profile card](docs/5.png)
 ![Chart example](docs/6.png)
 ![Q&A exchange](docs/7.png)
-```
+
 
 ---
 
