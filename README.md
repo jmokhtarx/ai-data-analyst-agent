@@ -1,4 +1,4 @@
-# AI Data Analyst Agent
+AI Data Analyst Agent
 
 A local-first AI agent that lets you upload a dataset (CSV or Excel) and chat with it in
 plain English. Instead of writing pandas code yourself, you ask questions — the agent
@@ -6,31 +6,11 @@ decides which analysis or chart is needed, runs the real calculation in Python, 
 explains the result back to you in natural language.
 
 Built incrementally, one tested step at a time, following the principle that
-**the LLM decides what to do, but Python always does the actual math.**
+the LLM decides what to do, but Python always does the actual math.
 
----
+Gallery
 
-## Gallery
-
-![AI Data Analyst Agent interface](docs/1.png)
-
-![Automatic insights on upload](docs/2.png)
-
-![Multi-chat sidebar with dataset profile](docs/3.png)
-
-![Downloadable PDF report](docs/4.png)
-
-![Dataset profile card](docs/5.png)
-
-![Chart example](docs/6.png)
-
-![Q&A exchange](docs/7.png)
-
----
-
-## How it works
-
-```text
+How it works
 User
  |
  v
